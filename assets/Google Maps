@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mapa Interactivo</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            const centroMapa = { lat: 40.7128, lng: -74.0060 }; // Coordenadas del centro del mapa (Nueva York)
+            const mapaConfig = {
+                center: centroMapa,
+                zoom: 10,
+            };
+            const map = new google.maps.Map(document.getElementById('map'), mapaConfig);
+
+            const marker = new google.maps.Marker({
+                position: centroMapa,
+                map: map,
+                title: "Tierra del Fuego",
+            });
+
+            const infoWindow = new google.maps.InfoWindow({
+                content: "¡Bienvenido a Tierra del Fuego!",
+            });
+
+            marker.addListener("click", function() {
+                infoWindow.open(map, marker);
+            });
+        }
+    </script>
+
+    <script>
+        // Función para cargar la API de Google Maps
+        function loadMapScript() {
+            const script = document.createElement("script");
+            script.src = `https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&libraries=places&callback=initMap`;
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+
+        // Verificar si la API de Google Maps ya se cargó
+        if (window.google && google.maps) {
+            // La API de Google Maps ya está disponible
+            initMap();
+        } else {
+            // Esperar a que la página se cargue completamente para cargar la API
+            if (window.attachEvent) {
+                window.attachEvent("onload", loadMapScript);
+            } else {
+                window.addEventListener("load", loadMapScript, false);
+            }
+        }
+    </script>
+</body>
+</html>
