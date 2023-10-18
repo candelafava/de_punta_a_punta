@@ -1,0 +1,30 @@
+<div class="image-gallery">
+    <div class="image-item">
+        <img src="imagen1.jpg" alt="Imagen 1">
+    </div>
+    <div class="image-item">
+        <img src="imagen2.jpg" alt="Imagen 2">
+    </div>
+    <div class="image-item">
+        <img src="imagen3.jpg" alt="Imagen 3">
+    </div>
+    <!--  más imágenes  -->
+</div>
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-item {
+    margin: 10px;
+    max-width: 300px;
+    cursor: pointer;
+}
+
+.image-item:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+<link rel="stylesheet" href="lightbox.css">
+<script src="lightbox.js"></script>
