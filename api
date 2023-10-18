@@ -1,0 +1,51 @@
+api/
+├── app.py
+├── static/
+│   ├── css/
+│   │   └── form_style.css
+│   └── js/
+│       ├── api.js
+│       └── photo_api.js
+├── templates/
+│   ├── formulario.html
+│   ├── index.html
+│   ├── norte.html
+│   └── sur.html
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def welcome():
+    return render_template('index.html')
+
+@app.route('/norte')
+def norte():
+    return render_template('norte.html')
+
+@app.route('/sur')
+def sur():
+    return render_template('sur.html')
+
+@app.route('/api/destinos', methods=['GET'])
+def get_destinos():
+    destinos = [
+        {"nombre": "Tierra del Fuego", "ubicacion": "Tierra del fuego, Argentina", "descripcion": "La famosa provincia del fin del mundo."},
+        {"nombre": "destino", "ubicacion": "destino, Argentina", "descripcion": "Desc."},
+        # Agrega más destinos aquí
+    ]
+    return jsonify(destinos)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form_style.css') }}">
+</head>
+<body>
+    <!-- Contenido de tu página -->
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/photo_api.js') }}"></script>
+</body>
+</html>
