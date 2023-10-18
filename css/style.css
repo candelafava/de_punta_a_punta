@@ -152,8 +152,8 @@ img.flotante_cataratas{
 
 .contenido_paginas{
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-areas: "foto info"
+    grid-template-columns:auto auto auto;
+    grid-template-areas: "foto lista info"
 }
 #fotos_container{
     display: flex;
@@ -162,8 +162,22 @@ img.flotante_cataratas{
 .informacion_ciudad{
     display: flex;
     grid-area: info;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: #063642;
+    width: 70%;
+    margin-left: 50px;
 }
-
+.lista_ciudades form{
+    display: block;
+    grid-area: lista;
+    left: 30px;
+    padding-left: 20px;
+}
+.lista_ciudades form p{
+    font-size: medium;
+    color: #fff;
+}
 
 /*Formato del contenido pie de pagina FOOTER*/
 
