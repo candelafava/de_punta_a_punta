@@ -1,30 +1,43 @@
-<div class="image-gallery">
-    <div class="image-item">
-        <img src="imagen1.jpg" alt="alerces.jpg">
-    </div>
-    <div class="image-item">
-        <img src="imagen2.jpg" alt="Imagen 2">
-    </div>
-    <div class="image-item">
-        <img src="imagen3.jpg" alt="Imagen 3">
-    </div>
-    <!--  más imágenes  -->
-</div>
-.image-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Galería de Imágenes</title>
+    <style>
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-.image-item {
-    margin: 10px;
-    max-width: 300px;
-    cursor: pointer;
-}
+        .image-item {
+            margin: 10px;
+            max-width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s; /* Agregar la transición aquí */
+        }
 
-.image-item:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s;
-}
-<link rel="stylesheet" href="lightbox.css">
-<script src="lightbox.js"></script>
+        .image-item:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="image-gallery">
+        <div class="image-item">
+            <img src="alerces.jpg" alt="Imagen 1">
+        </div>
+        <div class="image-item">
+            <img src="esquel.jpg" alt="Imagen 2">
+        </div>
+        <div class="image-item">
+            <img src="laguna_rosario.jpg" alt="Imagen 3">
+        </div>
+        <!-- Agrega más imágenes aquí -->
+    </div>
+    
+    <!-- Agrega los archivos de Lightbox.js y Lightbox.css -->
+    <script src="lightbox.js"></script>
+    <link rel="stylesheet" href="lightbox.css">
+</body>
+</html>
