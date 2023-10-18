@@ -148,7 +148,21 @@ img.flotante_cataratas{
     width: 70%;
     float: center;
 }
+/*Contenido de las paginas cardinales------*/ 
 
+.contenido_paginas{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "foto info"
+}
+#fotos_container{
+    display: flex;
+    grid-area: foto;
+}
+.informacion_ciudad{
+    display: flex;
+    grid-area: info;
+}
 
 
 /*Formato del contenido pie de pagina FOOTER*/
