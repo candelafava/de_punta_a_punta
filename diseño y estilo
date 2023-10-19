@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Título de tu página</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <div class="mi-clase">
+        <h2>Sección de Destacados</h2>
+        <p>Contenido importante de esta sección.</p>
+    </div>
+    
+    <!-- Contenido de tu página aquí -->
+    <section>
+        <h2>Otra sección</h2>
+        <p>Este es el contenido de otra sección de tu página web.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 TuNombre. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
