@@ -1,0 +1,37 @@
+<section>
+    <h2>Región Sur de Argentina</h2>
+    <p>Información interesante sobre la región sur de Argentina...</p>
+</section>
+
+<div id="map" style="height: 400px;"></div>
+
+<script> <!-- Agrega la etiqueta script para el código JavaScript -->
+const map = L.map('map').setView([-45.878760, -67.528471], 7);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+}).addTo(map);
+
+L.marker([-45.878760, -67.528471]).addTo(map)
+    .bindPopup('Lugar de interés en la región sur')
+    .openPopup();
+</script>
+
+<section>
+    <h2>Recursos adicionales</h2>
+    <ul>
+        <li><a href="enlace-1.html">Recurso 1</a></li>
+        <li><a href="enlace-2.html">Recurso 2</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Contacto</h2>
+    <form action="procesar_formulario.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
