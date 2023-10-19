@@ -159,8 +159,8 @@ img.flotante_cataratas{
     display: flex;
     grid-area: foto;
 }
-.informacion_ciudad{
-    display: flex;
+.informacion_ciudades{
+    display: block;
     grid-area: info;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
@@ -177,6 +177,23 @@ img.flotante_cataratas{
 .lista_ciudades form p{
     font-size: medium;
     color: #fff;
+}
+                
+                
+                
+.container_texto-activo{
+    display: block;
+    
+    padding: 15px;
+}
+.informacion_ciudades h1{
+    color: #C08261;
+    font-size: large;
+    font-weight:bold;
+}
+
+.container_texto-inactivo{
+    display: none;
 }
 
 /*Formato del contenido pie de pagina FOOTER*/
