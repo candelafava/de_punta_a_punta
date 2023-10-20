@@ -47,7 +47,7 @@ var ciudadElegida = 'tierra del fuego';
 
 
 
-
+obtenerFotos("trevelin") 
 
 //prueba de la llamada
 var select = document.getElementById("miSelectMultiple");

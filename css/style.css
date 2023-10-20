@@ -178,11 +178,14 @@ img.flotante_cataratas{
     font-size: medium;
     color: #fff;
 }
+p .texto_info{
+    display: flex;
+    justify-content: flex-end;
+}                
                 
                 
-                
-.container_texto-activo{
-    display: block;
+.container_texto{
+    display: none;
     
     padding: 15px;
 }
@@ -192,9 +195,6 @@ img.flotante_cataratas{
     font-weight:bold;
 }
 
-.container_texto-inactivo{
-    display: none;
-}
 
 /*Formato del contenido pie de pagina FOOTER*/
 

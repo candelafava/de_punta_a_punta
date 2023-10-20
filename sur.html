@@ -67,7 +67,7 @@
                 </form>
             </div>
             <div class="informacion_ciudades">
-                <div class="container_texto-inactivo esquel">
+                <div class="container_texto " id="container_1">
                     <p class="texto__info" id="esquel">
                     <h1>Esquel, encanto en la Cordillera</h1>
                     Esquel, ubicada en la provincia de Chubut, Argentina, es un tesoro escondido en la cordillera de los
@@ -91,7 +91,7 @@
                     entorno natural incomparable.
                     </p>
                 </div>
-                <div class="container_texto-inactivo bariloche">
+                <div class="container_texto" id="container_2">
                     <p class="texto__info">
                     <h1>San Carlos de Bariloche,un Paraíso en la Patagonia</h1>
                     Bariloche, en la pintoresca región de la Patagonia argentina, es un destino turístico emblemático
@@ -121,7 +121,7 @@
                     con su encanto único.
                     </p>
                 </div>
-                <div class="container_texto-inactivo sanma">
+                <div class="container_texto" id="container_3">
                     <p class="texto__info">
                     <h1>San Martin de los Andes, belleza en los Andes Patagónicos</h1>
                     San Martín de los Andes, anidada en la región de la Patagonia argentina, es un destino turístico que
@@ -147,7 +147,7 @@
                     Argentina.
                     </p>
                 </div>
-                <div class="container_texto-inactivo bolson">
+                <div class="container_texto" id="container_4">
                     <p class="texto__info">
                     <h1>El Bolsón, Argentina: Armonía Natural en la Patagonia</h1>
                     El Bolsón, ubicado en la provincia de Río Negro, Argentina, es un refugio de belleza natural
@@ -170,7 +170,7 @@
                     del bullicio urbano y conectarse con la naturaleza en un entorno de belleza inigualable.
                     </p>
                 </div>
-                <div class="container_texto-inactivo calafate">
+                <div class="container_texto" id="container_5">
                     <p class="texto__info">
                     <h1>El Calafate, Argentina: Maravillas Glaciares en la Patagonia</h1>
                     El Calafate, anclado en la región de la Patagonia argentina, es un enclave fascinante conocido por
@@ -194,7 +194,7 @@
                     acogedoras, brindando a los visitantes una experiencia inolvidable en el corazón de la Patagonia.
                     </p>
                 </div>
-                <div class="container_texto-activo ushuaia">
+                <div class="container_texto" id="container_6">
                     <p class="texto__info">
                     <h1>Ushuaia, Argentina: Fin del Mundo y Comienzo de Aventuras Inolvidables</h1>
                     Ushuaia, la ciudad más austral del mundo, se encuentra en la isla Grande de Tierra del Fuego,
@@ -222,6 +222,32 @@
             </div>
         </div>
     </div>
+    
+
+ 
+    <script>
+        var select = document.getElementById("miSelectMultiple");
+        var containers = document.querySelectorAll(".container_texto");
+
+        document.getElementById("container_1").style.display = "block";
+
+        select.addEventListener("change", function () {
+            var selectedValue = select.value;
+            
+            // Oculta todos los contenedores de texto
+            containers.forEach(function (container) {
+                container.style.display = 'none';
+            });
+            
+            // Muestra el contenedor de texto correspondiente a la opción seleccionada
+            var containerToShow = document.getElementById("container_" + selectedValue);
+            if (containerToShow) {
+                containerToShow.style.display = 'block';
+            }
+        }); 
+    
+            
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="./js/photo_api.js"></script>
