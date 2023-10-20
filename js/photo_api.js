@@ -42,12 +42,9 @@ function mostrarFotos(photos) {
     });
 }
 
-// Ejemplo de uso:
-var ciudadElegida = 'tierra del fuego';
 
 
-
-obtenerFotos("trevelin") 
+obtenerFotos("mate_argentina") 
 
 //prueba de la llamada
 var select = document.getElementById("miSelectMultiple");
@@ -58,28 +55,7 @@ select.addEventListener("change", function(){
   for (var i = 0; i < selectedOptions.length; i++) {
     var valor_elegido =(selectedOptions[i].value)
         console.log( valor_elegido)
-        switch(valor_elegido) {
-            case "1":
-                obtenerFotos("trevelin") 
-                break
-            case "2":
-                obtenerFotos("Bariloche") 
-                break
-            case "3":
-                obtenerFotos("San martin de los andes") 
-                break
-            case "4":
-                obtenerFotos("El Bolson") 
-                break
-            case "5":
-                obtenerFotos("Glaciar perito moreno") 
-                break
-            case "6":
-                obtenerFotos("Ushuaia") 
-                break    
-
-            }  
-
+        obtenerFotos(valor_elegido); 
 
        }
    

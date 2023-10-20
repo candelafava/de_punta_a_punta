@@ -49,7 +49,7 @@
             </ul>
         </nav>
         <div class="titulo">
-            <h1>Seccion Sur</h1>
+            <h1>Sección Sur</h1>
         </div>
         <div class="contenido_paginas">
             <div id="fotos-container"></div>
@@ -57,17 +57,17 @@
                 <form method="" action="/send/" class="form_ciudades">
                     <p>Selecciona Ciudad:</p>
                     <select id="miSelectMultiple" onchange="">
-                        <option value="1">Esquel </option>
-                        <option value="2">Bariloche </option>
-                        <option value="3">San Martin de los Andes </option>
-                        <option value="4">El Bolson </option>
-                        <option value="5">Calafate</option>
-                        <option value="6">Ushuaia</option>
+                        <option value="trevelin">Esquel </option>
+                        <option value="bariloche">Bariloche </option>
+                        <option value="san martin de los andes">San Martin de los Andes </option>
+                        <option value="el bolson">El Bolson </option>
+                        <option value="perito moreno">Calafate</option>
+                        <option value="ushuaia">Ushuaia</option>
                     </select>
                 </form>
             </div>
             <div class="informacion_ciudades">
-                <div class="container_texto " id="container_1">
+                <div class="container_texto " id="container_trevelin">
                     <p class="texto__info" id="esquel">
                     <h1>Esquel, encanto en la Cordillera</h1>
                     Esquel, ubicada en la provincia de Chubut, Argentina, es un tesoro escondido en la cordillera de los
@@ -91,7 +91,7 @@
                     entorno natural incomparable.
                     </p>
                 </div>
-                <div class="container_texto" id="container_2">
+                <div class="container_texto" id="container_bariloche">
                     <p class="texto__info">
                     <h1>San Carlos de Bariloche,un Paraíso en la Patagonia</h1>
                     Bariloche, en la pintoresca región de la Patagonia argentina, es un destino turístico emblemático
@@ -121,7 +121,7 @@
                     con su encanto único.
                     </p>
                 </div>
-                <div class="container_texto" id="container_3">
+                <div class="container_texto" id="container_san martin de los andes">
                     <p class="texto__info">
                     <h1>San Martin de los Andes, belleza en los Andes Patagónicos</h1>
                     San Martín de los Andes, anidada en la región de la Patagonia argentina, es un destino turístico que
@@ -147,7 +147,7 @@
                     Argentina.
                     </p>
                 </div>
-                <div class="container_texto" id="container_4">
+                <div class="container_texto" id="container_el bolson">
                     <p class="texto__info">
                     <h1>El Bolsón, Argentina: Armonía Natural en la Patagonia</h1>
                     El Bolsón, ubicado en la provincia de Río Negro, Argentina, es un refugio de belleza natural
@@ -170,7 +170,7 @@
                     del bullicio urbano y conectarse con la naturaleza en un entorno de belleza inigualable.
                     </p>
                 </div>
-                <div class="container_texto" id="container_5">
+                <div class="container_texto" id="container_perito moreno">
                     <p class="texto__info">
                     <h1>El Calafate, Argentina: Maravillas Glaciares en la Patagonia</h1>
                     El Calafate, anclado en la región de la Patagonia argentina, es un enclave fascinante conocido por
@@ -194,7 +194,7 @@
                     acogedoras, brindando a los visitantes una experiencia inolvidable en el corazón de la Patagonia.
                     </p>
                 </div>
-                <div class="container_texto" id="container_6">
+                <div class="container_texto" id="container_ushuaia">
                     <p class="texto__info">
                     <h1>Ushuaia, Argentina: Fin del Mundo y Comienzo de Aventuras Inolvidables</h1>
                     Ushuaia, la ciudad más austral del mundo, se encuentra en la isla Grande de Tierra del Fuego,
@@ -229,7 +229,7 @@
         var select = document.getElementById("miSelectMultiple");
         var containers = document.querySelectorAll(".container_texto");
 
-        document.getElementById("container_1").style.display = "block";
+        document.getElementById("container_trevelin").style.display = "block";
 
         select.addEventListener("change", function () {
             var selectedValue = select.value;
