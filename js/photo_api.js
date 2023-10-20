@@ -1,64 +1,49 @@
-const apiKey = '6ecf068d782a9600388a3e3f815b6440';
-const apiUrl = 'https://api.flickr.com/services/rest/';
+// Función para mostrar fotos basadas en las URL de imágenes
+function mostrarFotos(photoURLs) {
+    // Esta función toma una matriz de URL de imágenes y las muestra en un elemento de la página con el id "galeria".
+    var galeria = document.getElementById("galeria");
 
-async function obtenerFotos(ciudad) {
-    const params = {
-        method: 'flickr.photos.search',
-        api_key: apiKey,
-        text: ciudad,
-        format: 'json',
-        nojsoncallback: 1,
-        per_page: 1,
-    };
+    // Elimina las fotos existentes antes de mostrar las nuevas fotos
+    galeria.innerHTML = "";
 
-    try {
-        const response = await fetch(`${apiUrl}?${new URLSearchParams(params)}`);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (data.photos && data.photos.photo.length > 0) {
-            mostrarFotos(data.photos.photo);
-        } else {
-            console.log('No se encontraron fotos para la ciudad especificada.');
-        }
-    } catch (error) {
-        console.error('Error al obtener fotos:', error);
-    }
-}
-
-function mostrarFotos(photos) {
-    const container = document.getElementById('fotos-container');
-    container.innerHTML = '';
-
-    photos.forEach((photo) => {
-        const imgUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
-        const imgElement = document.createElement('img');       
-        imgElement.src = imgUrl;
-        container.appendChild(imgElement);
+    // Itera a través de las URL de imágenes y crea elementos de imagen
+    photoURLs.forEach(function (url) {
+        var img = document.createElement("img");
+        img.src = url; // Asigna la URL de la imagen
+        galeria.appendChild(img); // Agrega la imagen a la galería
     });
 }
 
+// Ejemplo de uso:
+var ciudadElegida = 'tierra del fuego';
 
+// Función para obtener fotos según una ubicación o etiqueta
+function obtenerFotos(ubicacionOEtiqueta) {
+    // Esta función debería realizar una solicitud AJAX para obtener las URL de las imágenes
+    // basadas en la ubicación o etiqueta proporcionada. Luego, llama a mostrarFotos para mostrar las fotos obtenidas.
+    var fotosObtenidas = obtenerFotosDesdeServidor(ubicacionOEtiqueta);
+    mostrarFotos(fotosObtenidas);
+}
 
-obtenerFotos("mate_argentina") 
-
-//prueba de la llamada
+// Evento de escucha para el elemento select
 var select = document.getElementById("miSelectMultiple");
- 
-select.addEventListener("change", function(){
-  var selectedOptions = this.selectedOptions;
-  console.log("Options selected: ");
-  for (var i = 0; i < selectedOptions.length; i++) {
-    var valor_elegido =(selectedOptions[i].value)
-        console.log( valor_elegido)
-        obtenerFotos(valor_elegido); 
 
-       }
-   
+select.addEventListener("change", function () {
+    // ... (código existente)
+
+    // Opcionalmente, puedes llamar a mostrarFotos(photoURLs) aquí para mostrar las fotos obtenidas.
+    // Ejemplo: mostrarFotos(photoURLs);
 });
-        
 
+// Función para obtener fotos desde el servidor (debes implementar esta función)
+function obtenerFotosDesdeServidor(ubicacionOEtiqueta) {
+    // Agrega la lógica para obtener las URL de las imágenes desde el servidor o una API
+    // y devuelve un array de URLs de imágenes. Debes implementar esta función para obtener las URL reales.
+    // Por ahora, usaremos un ejemplo simple:
+    var fotosEjemplo = [
+        "imagen1.jpg",
+        "imagen2.jpg",
+        "imagen3.jpg",
+    ];
+    return fotosEjemplo;
+}
